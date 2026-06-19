@@ -1,0 +1,62 @@
+@import "tailwindcss";
+@import "maplibre-gl/dist/maplibre-gl.css";
+
+:root {
+  --teal-deep: #0d4f4f;
+  --teal-mid: #1a7a7a;
+  --teal-light: #4ecdc4;
+  --amber-cta: #fbbf24;
+  --background: #0a3d3d;
+  --foreground: #e8fffe;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-teal-deep: var(--teal-deep);
+  --color-teal-mid: var(--teal-mid);
+  --color-teal-light: var(--teal-light);
+  --color-amber-cta: var(--amber-cta);
+  --font-sans: var(--font-nunito);
+  --font-display: var(--font-fredoka);
+}
+
+body {
+  background: linear-gradient(160deg, #0a3d3d 0%, #0d5c5c 40%, #1a8a8a 100%);
+  background-attachment: fixed;
+  color: var(--foreground);
+  font-family: var(--font-nunito), system-ui, sans-serif;
+  min-height: 100vh;
+}
+
+.font-display {
+  font-family: var(--font-fredoka), system-ui, sans-serif;
+}
+
+.btn-primary {
+  @apply inline-flex items-center justify-center px-8 py-3 rounded-xl font-bold text-teal-950 bg-amber-300 border-2 border-amber-400 shadow-[0_4px_0_#d97706] hover:translate-y-0.5 hover:shadow-[0_2px_0_#d97706] active:translate-y-1 active:shadow-none transition-all;
+}
+
+.btn-secondary {
+  @apply inline-flex items-center justify-center px-6 py-2.5 rounded-xl font-semibold text-teal-100 bg-teal-900/50 border border-teal-700/50 hover:bg-teal-800/60 transition;
+}
+
+.card {
+  @apply rounded-2xl border-2 border-teal-900/40 bg-teal-950/30 backdrop-blur-sm;
+}
+
+.input {
+  @apply w-full px-4 py-2.5 rounded-xl bg-teal-950/60 border border-teal-700/50 text-white placeholder:text-teal-300/40 focus:outline-none focus:border-amber-300/60;
+}
+
+.chip {
+  @apply px-3 py-1 rounded-full text-sm border cursor-pointer transition;
+}
+
+.chip-active {
+  @apply bg-amber-300/20 border-amber-300/60 text-amber-100;
+}
+
+.chip-inactive {
+  @apply bg-teal-900/40 border-teal-700/40 text-teal-200/70 hover:border-teal-500/50;
+}
